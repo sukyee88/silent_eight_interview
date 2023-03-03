@@ -1,5 +1,6 @@
 import collections
-from helper import convert_input_file
+from src import convert_input_file
+import argparse
 
 
 class NumIsland:
@@ -94,8 +95,6 @@ class NumIsland:
 
         for row in range(self.total_rows):
             for col in range(self.total_cols):
-                print(row, col)
-                print(f"islands at {row} and {col} is {self.islands}")
                 if self.grid[row][col] == "1" and (row, col) not in self.visited:
                     self.breadth_first_search(row, col)
                     self.islands += 1
@@ -104,7 +103,10 @@ class NumIsland:
 
 
 if __name__ == "__main__":
-    grid = convert_input_file("./input/input.txt")
+    parser = argparse.ArgumentParser(description="Count number of islands!")
+    parser.add_argument("--input_file_path", type=str)
+    args = parser.parse_args()
+    grid = convert_input_file(args.input_file_path)
     counter = NumIsland(grid)
     num_of_island = counter.num_islands()
-    print("num islands", num_of_island)
+    print(num_of_island)
