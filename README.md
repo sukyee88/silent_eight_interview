@@ -7,7 +7,11 @@ The steps are as below:
 2. Prepare a bash script to run a script.
 3. Prepare a Dockerfile.
 
-## Libraries required
+## Requirements
+- python3+
+- pip20+
+- [docker](https://www.docker.com/get-started/) (if dockerfile is to be built)
+
 ## Run script
 ```
 ./count_island.sh ["input_file_path"]
