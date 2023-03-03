@@ -3,6 +3,7 @@ MYPATH=$1
 
 echo "USAGE: count_island.sh [input_file_path]"
 
+pip3 install -r requirements.txt
 # check input parameters
 if [ -z "$MYPATH" ]; then
     echo "Error: Input file path is not set. Use .txt file"
